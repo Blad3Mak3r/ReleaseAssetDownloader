@@ -26,13 +26,13 @@ jobs:
         run: deno cache deps.ts
 
       - name: Compile linux x64
-        run: deno compile --output rad-linux-x86_64 --target x86_64-unknown-linux-gnu --allow-net --allow-read cli.ts
+        run: deno compile --output rad-linux-x86_64 --target x86_64-unknown-linux-gnu --allow-net --allow-read --allow-write cli.ts
         
       - name: Compile Windows x64
-        run: deno compile --output rad-windows-x86_64 --target x86_64-pc-windows-msvc --allow-net --allow-read cli.ts
+        run: deno compile --output rad-windows-x86_64 --target x86_64-pc-windows-msvc --allow-net --allow-read --allow-write cli.ts
         
       - name: Compile Apple Darwin x64
-        run: deno compile --output rad-darwin-x86_64 --target x86_64-apple-darwin --allow-net --allow-read cli.ts
+        run: deno compile --output rad-darwin-x86_64 --target x86_64-apple-darwin --allow-net --allow-read --allow-write cli.ts
         
       - name: Release
         uses: softprops/action-gh-release@v1
